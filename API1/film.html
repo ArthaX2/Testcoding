@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top IMDb Films</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link rel="stylesheet" href="Style.css">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <a class="navbar-brand" href="#" target="_blank">
+                    <img src="https://logospng.org/download/imdb/imdb-2048.png" alt="Logo" id="logo">
+                    <img src="https://th.bing.com/th/id/R.674514170045868f2b86caf767c90c25?rik=HHj9OiaA6vk5dg&riu=http%3a%2f%2fwww.soft32.com%2fblog%2fwp-content%2fuploads%2f2016%2f08%2fspotify_logo.png&ehk=pWf0NLcCy0UoQLjcJWYoumQZxbqLSXxeV39lQI%2fqnPg%3d&risl=&pid=ImgRaw&r=0" alt="" class="1" id="logo1">
+                    IMDb™ & Spotify™
+                </a>
+                <a href="#" class="navbar-link active">IMDb</a>
+                <a href="../Spotify/index.html" class="navbar-link active">Spotify</a>
+            </div>
+        </nav>
+        <span class="logo">
+            IMDb Top Films
+        </span>
+        <span id="menu"></span>
+    </header>
+    <main>
+        <article id="content">
+        </article>
+        <aside>
+            <div class="profile-card">
+                <div class="profile-picture"></div>
+                <div class="profile-info">
+                    <p>Created by</p>
+                    <h1>Victoria Kimberly</h1>
+                </div>
+                <div class="socials">
+                    <a href="#" class="icon instagram" target="_blank"><i class='bx bxl-instagram'></i></a>
+                    <a href="#" class="icon linkedin" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                    <a href="#" class="icon mail" target="_blank"><i class='bx bxl-envelope'></i></a>
+                </div>
+                <div>
+                    <button id="loadMoreButton">Load More</button>
+                </div>
+            </div>
+        </aside>
+    </main>
+    <footer>
+        <p>Copyright &copy; <span id="yearText"></span></p>
+    </footer>
+    
+    <script id="movieCard" type="text/x-handlebars-template">
+      {{#each movies}}
+      <div class="card">
+          <div class="left" style="background-image: url('{{imageUrl}}');"></div>
+          <div class="right">
+              <h1 class="movie-title">{{title}}</h1>
+              <p class="movie-rating">Rating: {{rating}}</p>
+              <a href="{{url}}" class="movie-api" target="_blank">More Info</a>
+          </div>
+      </div>
+      {{/each}}
+    </script>
+    
+    
+    <script src="scripts.js"></script>
+</body>
+</html>

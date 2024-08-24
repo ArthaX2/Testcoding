@@ -1,0 +1,238 @@
+/* Reset margins, paddings, and box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(66deg, rgb(230, 251, 254) 0%, rgb(255, 247, 247));
+}
+
+header {
+    display: flex;
+    padding: 0 50px;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    color: white;
+}
+
+nav .container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#logo {
+    height: 80px;
+}
+
+#logo1 {
+    height: 50px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.navbar-link {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+a.navbar-link.active:hover {
+    text-decoration: none;
+    color: rgb(96, 174, 0);
+}
+
+a.navbar-link.active::after {
+    text-decoration: none;
+    color: rgb(33, 196, 0);
+}
+
+span.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+span#menu {
+    font-size: 30px;
+}
+
+main {
+    min-height: calc(100vh - 80px - 60px); /* Adjusting for header and footer */
+    background-color: black;
+    padding: 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Distribute cards evenly */
+}
+
+article#content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    color: white;
+    justify-content: center;
+}
+
+div.card {
+    display: flex;
+    flex-direction: column; /* Stack image and info vertically */
+    width: 100%;
+    max-width: 370px;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 10px;
+    padding: 20px;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* To handle overflow during animation */
+    position: relative; /* For animation effect */
+}
+
+div.card img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px;
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Image zoom effect */
+}
+
+div.card:hover img {
+    transform: scale(1.1); /* Zoom image slightly on hover */
+}
+
+div.card:hover {
+    transform: translateY(-10px); /* Lift card on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+}
+
+div.card > div.info {
+    margin-top: 15px; /* Space between image and text */
+    text-align: center;
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(175, 226, 255);
+    font-weight: bold;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+aside {
+    width: 25%;
+    padding: 20px;
+    position: sticky;
+    top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.profile-card {
+    width: 100%;
+    max-width: 320px;
+    background-color: rgb(0, 0, 0);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+}
+
+div.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-image: url('https://tse1.mm.bing.net/th?id=OIP.SUYCRhgFB-Jyyu9640j1mgHaGy&pid=Api&P=0&h=180');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 20px;
+    margin-top: 5rem;
+}
+
+div.profile-info {
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    color: white;
+}
+
+footer {
+    height: 60px;
+    line-height: 60px;
+    background-color: white;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}
+
+footer > p {
+    margin: 0;
+    color: #333;
+}
+
+button {
+    background-color: white;
+    border: none;
+    border-radius: 25px;
+    height: 3.5rem;
+    width: 10rem;
+    font-size: 16px;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ffd500;
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(0.9);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
